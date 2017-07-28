@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     connect= require('gulp-connect'),
     uglify = require('gulp-uglify'),
-    minImg = require("gulp-imagemin");
+    imageMin = require("gulp-imagemin");
 
 // 定义
 var concatJs='js/*.js';
@@ -26,16 +26,19 @@ var htmlDist = 'dist/page';
   gulp.task('html', function () { 
      gulp.src(htmlSrc)
          .pipe(gulp.dest(htmlDist))
- 
  });
 
  //压缩图片
- gulp.task('Images',function(){
-    gulp.src('images/**')
-        .pipe(minImg())
+//  gulp.task('Images',function(){
+//     gulp.src('images/*.*')
+//         .pipe(minImgs())
+//         .pipe(gulp.dest('dist/images'))
+//  })
+gulp.task('Images',function(){
+    gulp.src('images/*.*')
+        .pipe(imageMin({progressive: true}))
         .pipe(gulp.dest('dist/images'))
- })
-
+})
 
 
 //检测变化,以便实时刷新
@@ -45,7 +48,7 @@ var htmlDist = 'dist/page';
  
      gulp.watch('js/*.js', ['minJs']);
 
-     gulp.watch('images/**', ['Images']);
+     gulp.watch('images/*.*', ['Images']);
  
  });
 
