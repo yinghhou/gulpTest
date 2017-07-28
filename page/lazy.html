@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+ <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+          $("img").lazyload({ 
+          placeholder : "../images/10.gif",
+                 effect: "fadeIn"
+           });  
+      });
+</script>
+<body>
+    <p>
+        懒加载图片
+    </p>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/1.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/11.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/12.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/13.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/14.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/15.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/16.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/17.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/18.gif"></a></div>
+<div><a href="#"><img src="../images/10.gif" data-original="../images/19.gif"></a></div>
+   
+</body>
+</html>

@@ -28,12 +28,7 @@ var htmlDist = 'dist/page';
          .pipe(gulp.dest(htmlDist))
  });
 
- //压缩图片
-//  gulp.task('Images',function(){
-//     gulp.src('images/*.*')
-//         .pipe(minImgs())
-//         .pipe(gulp.dest('dist/images'))
-//  })
+
 gulp.task('Images',function(){
     gulp.src('images/*.*')
         .pipe(imageMin({progressive: true}))
@@ -44,7 +39,7 @@ gulp.task('Images',function(){
 //检测变化,以便实时刷新
   gulp.task('watch', function () {
  
-     gulp.watch('page/*.html', ['html']);
+    //  gulp.watch('page/*.html', ['html']);
  
      gulp.watch('js/*.js', ['minJs']);
 
