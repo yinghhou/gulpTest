@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        图片未压缩，压缩图片。
+    </p>
+      <script>
+         window.onload = function () {
+             
+             //application/vnd.chromium.remoting-viewer 可能为360特有
+             var is360 = _mime("type", "application/vnd.chromium.remoting-viewer");
+             
+             if (isChrome() && is360) { 
+                 alert("检测到是360浏览器");
+             }
+         }
+         //检测是否是谷歌内核(可排除360及谷歌以外的浏览器)
+         function isChrome(){
+            var ua = navigator.userAgent.toLowerCase();
+ 
+             return ua.indexOf("chrome") > 1;
+         }
+         //测试mime
+         function _mime(option, value) {
+             var mimeTypes = navigator.mimeTypes;
+             for (var mt in mimeTypes) {
+                 if (mimeTypes[mt][option] == value) {
+                     return true;
+                 }
+             }
+             return false;
+         }
+
+
+         
+
+         // 检测ie8以下 
+         var lessThenIE8 = function () {
+            var UA = navigator.userAgent,
+                isIE = UA.indexOf('MSIE') > -1,
+                v = isIE ? /\d+/.exec(UA.split(';')[1]) : 'no ie';
+            return v < =8;
+        }();
+        //使用方法
+        if(lessThenIE8){
+            alert('浏览器低于ie8')
+        }
+     </script>
+    
+</body>
+</html>
