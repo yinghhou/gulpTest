@@ -43,11 +43,11 @@
             var UA = navigator.userAgent,
                 isIE = UA.indexOf('MSIE') > -1,
                 v = isIE ? /\d+/.exec(UA.split(';')[1]) : 'no ie';
-            return v < =8;
+            return v < 9;
         }();
         //使用方法
         if(lessThenIE8){
-            alert('浏览器低于ie8')
+            alert('您的浏览器版本太低，请升级或者更换浏览器');
         }
      </script>
     

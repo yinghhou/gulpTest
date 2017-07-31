@@ -46,5 +46,5 @@ gulp.task('Images',function(){
      gulp.watch('images/*.*', ['Images']);
  
  });
-
+ 
  gulp.task('default', [ 'minJs', 'html','Images','watch', 'connects']);
