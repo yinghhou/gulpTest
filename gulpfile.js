@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     connect= require('gulp-connect'),
     uglify = require('gulp-uglify'),
-    imageMin = require("gulp-imagemin");
+    imageMin = require("gulp-imagemin"),
+    sass = require('gulp-sass');
 
 // 定义
 var concatJs='js/*.js';
@@ -34,7 +35,11 @@ gulp.task('Images',function(){
         .pipe(imageMin({progressive: true}))
         .pipe(gulp.dest('dist/images'))
 })
-
+gulp.task('sassTo',function(){
+    gulp.src("sass/*.scss")
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'))
+})
 
 //检测变化,以便实时刷新
   gulp.task('watch', function () {
@@ -44,7 +49,9 @@ gulp.task('Images',function(){
      gulp.watch('js/*.js', ['minJs']);
 
      gulp.watch('images/*.*', ['Images']);
+
+     gulp.watch('sass/*.scss', ['sass']);
  
  });
  
- gulp.task('default', [ 'minJs', 'html','Images','watch', 'connects']);
+ gulp.task('default', [ 'minJs', 'html','Images','sass','watch', 'connects']);
