@@ -50,8 +50,8 @@ gulp.task('sassTo',function(){
 
      gulp.watch('images/*.*', ['Images']);
 
-     gulp.watch('sass/*.scss', ['sass']);
+     gulp.watch('sass/*.scss', ['sassTo']);
  
  });
  
- gulp.task('default', [ 'minJs', 'html','Images','sass','watch', 'connects']);
+ gulp.task('default', [ 'minJs', 'html','Images','sassTo','watch', 'connects']);
